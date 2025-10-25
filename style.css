@@ -1,94 +1,162 @@
+/* --- Global Variables (Eye-Saver Palette) --- */
+:root {
+  --bg-body: #202227;      /* Dark, soft slate-blue (NOT black) */
+  --bg-container: #2C2F36; /* A slightly lighter grey-blue for the app */
+  --bg-element: #363A43;   /* Background for textareas, response box */
+  
+  --text-primary: #C8CDD5; /* SOFT light grey (Stops eye strain) */
+  --text-secondary: #8A919F; /* Medium grey for labels */
+  
+  --color-primary: #5E8AFF;      /* A SOFTER, less "electric" blue */
+  --color-primary-dark: #4A70D1; /* Hover for the blue */
+  --color-border: #404550;      /* A clear but non-distracting border */
+
+  --font-body: "Poppins", "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Fira Code", "Courier New", Courier, monospace;
+}
+
 /* --- Global Styles --- */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0;           /* Light gray text */
-    margin: 0;
-    padding: 20px;
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 40px 20px;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Headings */
 h1, h2 {
-    text-align: center;
-    color: #03dac6; /* A bright, techy-green/blue */
+  text-align: center;
+  font-weight: 600;
 }
 
-/* --- Main App Layout --- */
+h1 {
+  color: var(--text-primary); /* The main text color is clean for a title */
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+h2 {
+  color: var(--text-secondary); /* Sub-heading is less important */
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* Main App Layout */
 #app-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #1e1e1e; /* Slightly lighter dark background */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: var(--bg-container);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  border: 1px solid var(--color-border);
 }
 
-/* --- Controls / Buttons --- */
+/* Controls / Buttons */
 #controls-container {
-    display: flex;
-    justify-content: space-around; /* Evenly space the buttons */
-    flex-wrap: wrap; /* Let buttons wrap on small screens */
-    margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
 }
 
 #controls-container button {
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #007BFF; /* Blue */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
-    margin: 5px; /* Add margin for wrapping */
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF; /* White text is OK on buttons for a clear CTA */
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
 #controls-container button:hover {
-    background-color: #0056b3; /* Darker blue */
-    transform: translateY(-2px); /* Slight lift effect */
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
 }
 
-/* --- Text Box Layout --- */
+#controls-container button:active {
+  transform: translateY(0);
+}
+
+/* Text Box Layout */
 #text-areas-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Adds space between the two boxes */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .text-box {
-    flex: 1; /* This makes both boxes take up equal space */
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Text box labels */
 .text-box h2 {
-    font-size: 18px;
-    color: #bb86fc; /* A techy purple */
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 textarea {
-    width: 100%;
-    box-sizing: border-box; /* Makes padding behave correctly */
-    padding: 10px;
-    border: 1px solid #2b80bd;
-    border-radius: 4px;
-    font-size: 14px;
-    background-color: #252525;
-    color: #e0e0e0;
-    font-family: "Courier New", Courier, monospace; /* Monospaced font for code */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: var(--bg-element);
+  color: var(--text-primary); /* Use the soft text color */
+  font-family: var(--font-mono);
+  min-height: 200px;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  resize: vertical;
 }
 
-/* --- AI Response Box --- */
+textarea:focus {
+  background-color: var(--bg-container); /* Makes it feel "cut out" */
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(94, 138, 255, 0.25); /* Softer glow */
+  outline: none;
+}
+
+/* When the textarea is in focus, light up its label */
+.text-box:focus-within h2 {
+  color: var(--color-primary);
+}
+
+/* AI Response Box */
 #response-container {
-    margin-top: 30px;
+  margin-top: 40px;
+}
+
+/* Label for the response box */
+#response-container h2 {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: 500;
 }
 
 #response-display {
-    padding: 20px;
-    background-color: #474846;
-    border: 1px dashed #96e073;
-    border-radius: 4px;
-    min-height: 100px;
-    white-space: pre-wrap; /* This is the magic for formatting! */
-    font-family: "Courier New", Courier, monospace;
+  padding: 20px;
+  background-color: var(--bg-element);
+  border: 1px solid var(--color-border); /* Clean, simple border */
+  border-radius: 8px;
+  min-height: 120px;
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  color: var(--text-primary); /* Soft text color */
 }

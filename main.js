@@ -1,14 +1,3 @@
-// --- 1. SELECT ALL OF OUR HTML ELEMENTS ---
-const problemInput = document.getElementById("problem-input");
-const userCodeInput = document.getElementById("user-code-input");
-const approachBtn = document.getElementById("btn-approach");
-const debugBtn = document.getElementById("btn-debug");
-const analyzeBtn = document.getElementById("btn-analyze");
-const testcaseBtn = document.getElementById("btn-testcase");
-const solutionBtn = document.getElementById("btn-solution");
-const responseDisplay = document.getElementById("response-display");
-
-// Make the callback function 'async'
 // --- 2. ADD EVENT LISTENERS ---
 
 // === 1. "Get Approach" Button ===
@@ -22,7 +11,7 @@ approachBtn.addEventListener("click", async () => {
     responseDisplay.innerText = "Thinking... please wait.";
 
     try {
-        const response = await fetch("http://1227.0.0.1:5000/api/approach", {
+        const response = await fetch("https://coding-mentor-backend.onrender.com/api/approach", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ "problem": problem }),
@@ -49,7 +38,7 @@ debugBtn.addEventListener("click", async () => {
     responseDisplay.innerText = "Debugging... please wait.";
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/api/debug", { // <-- New URL
+        const response = await fetch("https://coding-mentor-backend.onrender.com/api/debug", { // <-- New URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ // <-- New body with 2 items
@@ -78,7 +67,7 @@ analyzeBtn.addEventListener("click", async () => {
     responseDisplay.innerText = "Analyzing... please wait.";
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/api/analyze", { // <-- New URL
+        const response = await fetch("https://coding-mentor-backend.onrender.com/api/analyze", { // <-- New URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ "code": code }), // <-- New body
@@ -104,7 +93,7 @@ testcaseBtn.addEventListener("click", async () => {
     responseDisplay.innerText = "Generating test cases... please wait.";
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/api/testcase", { // <-- New URL
+        const response = await fetch("https://coding-mentor-backend.onrender.com/api/testcase", { // <-- New URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ "problem": problem }), // <-- New body
@@ -130,7 +119,7 @@ solutionBtn.addEventListener("click", async () => {
     responseDisplay.innerText = "Generating solution... please wait.";
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/api/solution", { // <-- New URL
+        const response = await fetch("https://coding-mentor-backend.onrender.com/api/solution", { // <-- New URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ "problem": problem }), // <-- New body

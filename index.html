@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI LeetCode Tutor</title>
+    <!-- This is the line that links your CSS file -->
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+
+    <h1>Coding Buddy</h1>
+
+    <!-- This div is the main container for our whole app -->
+    <div id="app-container">
+
+        <!-- This is the form for our 5 features -->
+       
+        <!-- This container holds our two text boxes -->
+        <div id="text-areas-container">
+            <!-- Box for the problem description -->
+            <div class="text-box">
+                <h2>Problem Description</h2>
+                <textarea id="problem-input" rows="15" placeholder="Paste your LeetCode problem description here..."></textarea>
+            </div>
+
+            <!-- Box for the user's code -->
+            <div class="text-box">
+                <h2>Your Code</h2>
+                <textarea id="user-code-input" rows="15" placeholder="Paste your code here to get it debugged or analyzed..."></textarea>
+            </div>
+        </div>
+         <div id="controls-container">
+            <button id="btn-approach">Get Approach</button>
+            <button id="btn-debug">Find My Bug</button>
+            <button id="btn-analyze">Analyze My Code</button>
+            <button id="btn-testcase">Generate Test Cases</button>
+            <button id="btn-solution">Show Solution</button>
+        </div>
+
+        <!-- This is where the AI's answer will appear -->
+        <div id="response-container">
+            <h2>AI Response:</h2>
+            <div id="response-display">
+                <!-- We will use JavaScript to put the AI's text in here -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- This is the line that links our JavaScript file -->
+    <!-- We will create this file in the next lesson -->
+    <script src="main.js" defer></script>
+</body>
+</html>

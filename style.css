@@ -1,0 +1,94 @@
+/* --- Global Styles --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0;           /* Light gray text */
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #03dac6; /* A bright, techy-green/blue */
+}
+
+/* --- Main App Layout --- */
+#app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* Slightly lighter dark background */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Controls / Buttons --- */
+#controls-container {
+    display: flex;
+    justify-content: space-around; /* Evenly space the buttons */
+    flex-wrap: wrap; /* Let buttons wrap on small screens */
+    margin-bottom: 25px;
+}
+
+#controls-container button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007BFF; /* Blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    margin: 5px; /* Add margin for wrapping */
+}
+
+#controls-container button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* --- Text Box Layout --- */
+#text-areas-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between the two boxes */
+}
+
+.text-box {
+    flex: 1; /* This makes both boxes take up equal space */
+    display: flex;
+    flex-direction: column;
+}
+
+.text-box h2 {
+    font-size: 18px;
+    color: #bb86fc; /* A techy purple */
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box; /* Makes padding behave correctly */
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #252525;
+    color: #e0e0e0;
+    font-family: "Courier New", Courier, monospace; /* Monospaced font for code */
+}
+
+/* --- AI Response Box --- */
+#response-container {
+    margin-top: 30px;
+}
+
+#response-display {
+    padding: 20px;
+    background-color: #252525;
+    border: 1px dashed #444;
+    border-radius: 4px;
+    min-height: 100px;
+    white-space: pre-wrap; /* This is the magic for formatting! */
+    font-family: "Courier New", Courier, monospace;
+}

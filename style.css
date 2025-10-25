@@ -70,7 +70,7 @@ textarea {
     width: 100%;
     box-sizing: border-box; /* Makes padding behave correctly */
     padding: 10px;
-    border: 1px solid #333;
+    border: 1px solid #2b80bd;
     border-radius: 4px;
     font-size: 14px;
     background-color: #252525;
@@ -85,8 +85,8 @@ textarea {
 
 #response-display {
     padding: 20px;
-    background-color: #252525;
-    border: 1px dashed #444;
+    background-color: #e6e2e2;
+    border: 1px dashed #96e073;
     border-radius: 4px;
     min-height: 100px;
     white-space: pre-wrap; /* This is the magic for formatting! */
